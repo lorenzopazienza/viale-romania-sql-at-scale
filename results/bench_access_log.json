@@ -1,0 +1,54 @@
+{
+ "big_10k": {
+  "rows": 10513,
+  "ghost_noidx": 0.0038253079999321926,
+  "ghost_result": "((484, 'B-9147', 'Room 204', datetime.date(2026, 9, 21), datetime.timedelta(seconds=70620), datetime.timedelta(seconds=7",
+  "except_noidx": 0.006704016000071533,
+  "except_result": "((203,),)",
+  "case_noidx": 0.019438148000062938,
+  "case_result": "(('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620)),)",
+  "index_build": 0.03954106600008345,
+  "ghost_idx": 0.0003875149999430505,
+  "except_idx": 0.0005417119999719944,
+  "case_idx": 0.002391824000028464
+ },
+ "big_100k": {
+  "rows": 100756,
+  "ghost_noidx": 0.03087133199994696,
+  "ghost_result": "((484, 'B-9147', 'Room 204', datetime.date(2026, 9, 21), datetime.timedelta(seconds=70620), datetime.timedelta(seconds=7",
+  "except_noidx": 0.05631525199999032,
+  "except_result": "((203,),)",
+  "case_noidx": 0.17435791499997322,
+  "case_result": "(('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620)),)",
+  "index_build": 0.3183293889999277,
+  "ghost_idx": 0.0006924300000719086,
+  "except_idx": 0.0008920089999264746,
+  "case_idx": 0.011138796000068396
+ },
+ "big_1m": {
+  "rows": 1003186,
+  "ghost_noidx": 0.3232697519999874,
+  "ghost_result": "((484, 'B-9147', 'Room 204', datetime.date(2026, 9, 21), datetime.timedelta(seconds=70620), datetime.timedelta(seconds=7",
+  "except_noidx": 0.6151939449999873,
+  "except_result": "((203,),)",
+  "case_noidx": 1.7497920380000096,
+  "case_result": "(('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620)),)",
+  "index_build": 2.9517788890000247,
+  "ghost_idx": 0.0017749500000263652,
+  "except_idx": 0.0032662870000876865,
+  "case_idx": 0.5241746609999609
+ },
+ "big_10m": {
+  "rows": 10027486,
+  "ghost_noidx": 3.1465821839999535,
+  "ghost_result": "((484, 'B-9147', 'Room 204', datetime.date(2026, 9, 21), datetime.timedelta(seconds=70620), datetime.timedelta(seconds=7",
+  "except_noidx": 5.831755138999824,
+  "except_result": "((203,),)",
+  "case_noidx": 17.366312540999843,
+  "case_result": "(('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620)),)",
+  "index_build": 32.06629745400005,
+  "ghost_idx": 0.01658823399998255,
+  "except_idx": 0.03316102200005844,
+  "case_idx": 21.72762297899999
+ }
+}

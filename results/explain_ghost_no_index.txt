@@ -1,0 +1,7 @@
+*************************** 1. row ***************************
+EXPLAIN: -> Filter: (b.badge_id is null)  (cost=1.02e+6 rows=97435) (actual time=0.447..3607 rows=1 loops=1)
+    -> Nested loop antijoin  (cost=1.02e+6 rows=97435) (actual time=0.446..3607 rows=1 loops=1)
+        -> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Room 204'))  (cost=982865 rows=97435) (actual time=0.412..3598 rows=6757 loops=1)
+            -> Table scan on a  (cost=982865 rows=9.74e+6) (actual time=0.309..3063 rows=10e+6 loops=1)
+        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00126..0.00126 rows=1 loops=6757)
+

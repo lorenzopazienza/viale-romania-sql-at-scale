@@ -1,0 +1,30 @@
+{
+ "1000": {
+  "corr": 0.21027227199988374,
+  "window": 0.0035892390001208696,
+  "corr_idx": 0.04647987499993178,
+  "same": true,
+  "n_result": 262
+ },
+ "10000": {
+  "corr": 19.220186053999896,
+  "window": 0.029989234999902692,
+  "corr_idx": 4.460910973999944,
+  "same": true,
+  "n_result": 1651
+ },
+ "50000": {
+  "corr": null,
+  "window": 0.15150445600011153,
+  "corr_idx": null,
+  "same": false,
+  "n_result": 8703
+ },
+ "200000": {
+  "corr": null,
+  "window": 0.9421151399999417,
+  "corr_idx": null,
+  "same": false,
+  "n_result": 32373
+ }
+}
