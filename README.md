@@ -9,6 +9,18 @@ one around the original case and measured.
 The course materials (case dump, browser game, lab slides) are not included.
 To reproduce, use `DEMO_luiss_mystery.sql` from the lab.
 
+## Author
+
+**Lorenzo Pazienza**
+Visiting student, Stanford University
+
+BSc in Management and Artificial Intelligence, Luiss Guido Carli
+
+Optimization, High-Performance Computing, AI Systems
+
+https://github.com/lorenzopazienza/
+https://www.linkedin.com/in/lorenzo-pazienza/
+
 ## The case
 
 | | |
