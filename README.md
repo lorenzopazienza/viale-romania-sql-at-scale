@@ -108,3 +108,12 @@ python3 05_bench_grades.py
 ```
 
 All queries in `solutions/` run both in the browser game (SQLite 3.45) and on MySQL 8.0.
+
+## Author
+
+**Lorenzo Pazienza**
+Visiting student, Stanford University
+BSc in Management and Artificial Intelligence, Luiss Guido Carli
+Optimization, High-Performance Computing, AI Systems
+https://github.com/lorenzopazienza/
+https://www.linkedin.com/in/lorenzo-pazienza/
