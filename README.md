@@ -19,6 +19,7 @@ BSc in Management and Artificial Intelligence, Luiss Guido Carli
 Optimization, High-Performance Computing, AI Systems
 
 https://github.com/lorenzopazienza/
+
 https://www.linkedin.com/in/lorenzo-pazienza/
 
 ## The case
