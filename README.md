@@ -103,11 +103,3 @@ make charts                                      # redraw docs/img from results/
 ## Limits
 
 One machine, uniform synthetic data, warm cache, one MySQL version. The orders of magnitude and the plans are the point; the exact ratios would change with skewed real data, cold caches or another optimizer. [Methodology](docs/methodology.md) has the details.
-
-## Author
-
-**Lorenzo Pazienza**, undergraduate researcher in data and AI systems performance<br>
-BSc in Management and Artificial Intelligence, Luiss Guido Carli<br>
-Visiting student, Stanford Summer Session 2026
-
-[GitHub](https://github.com/lorenzopazienza)
