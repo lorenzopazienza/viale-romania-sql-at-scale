@@ -4,7 +4,7 @@ Follow-up to **Lab 5, SQL Murder Mystery** (Databases and Big Data, Luiss).
 
 In the lab, a student is found dead in Room 204 and the case is solved with SQL over a small university database: 136 students, 486 badge swipes. Every query answers in milliseconds, so every query looks equally good.
 
-This repository asks what happens to the same queries when the campus is real-sized. I generated a campus with **10 million badge swipes** around the original case, re-ran every step on MySQL 8.0, read the execution plans, and measured.
+This repository asks what happens to the same queries when the campus is real-sized. I generated a campus with **50,136 students and 10,027,486 badge swipes** (a full year, from 1 September 2025 to the murder night) around the original case, re-ran every step on MySQL 8.0, read the execution plans, and measured.
 
 ![Step 3 query time vs table size](docs/img/scaling_ghost.png)
 
