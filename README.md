@@ -19,6 +19,19 @@ This repository asks what happens to the same queries when the campus is real-si
 | 5 | `NOT EXISTS` and `NOT IN` get the same plan and beat `LEFT JOIN ... IS NULL`; `NOT IN` silently returns nothing if the list contains a `NULL`. | 9.6 s vs 12.8 s; 0 rows vs 986 | [Anti-joins](docs/04-anti-joins.md) |
 | 6 | The murder was possible because `access_log` has no foreign key. A foreign key would destroy the evidence; a trigger keeps it and raises an alert at 19:37, at 3.8× the insert cost. | 149k → 39k inserts/s | [Schema design](docs/05-schema-design.md) |
 
+## Author
+
+**Lorenzo Pazienza**
+Visiting student, Stanford University
+
+BSc in Management and Artificial Intelligence, Luiss Guido Carli
+
+Optimization, High-Performance Computing, AI Systems
+
+https://github.com/lorenzopazienza/
+
+https://www.linkedin.com/in/lorenzo-pazienza/
+
 ## The case
 
 | | |
