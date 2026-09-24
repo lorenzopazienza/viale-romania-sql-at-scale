@@ -1,0 +1,91 @@
+[
+ {
+  "index": "none",
+  "ghost_ms": 4060.24,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 10034247,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=961978 rows=91974) (actual time=0.341..4423 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=961978 rows=91974) (actual time=0.34..4423 rows=1 loops=1)\n        -> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Room 204'))  (cost=929787 rows=91974) (actual time=0.313..4414 rows=6758 loops=1)\n            -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.229..3856 rows=10e+6 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.0012..0.0012 rows=1 loops=6758)",
+  "inside_ms": 3764.49,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 10027489,
+  "inside_plan": "-> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Main Entrance') and (a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=929787 rows=10217) (actual time=0.263..4008 rows=16 loops=1)\n    -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.183..3419 rows=10e+6 loops=1)"
+ },
+ {
+  "index": "(access_date)",
+  "build_s": 19.0,
+  "size_mb": 138.6,
+  "ghost_ms": 44.34,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 33833,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=15075 rows=5109) (actual time=0.933..44.8 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=15075 rows=5109) (actual time=0.932..44.8 rows=1 loops=1)\n        -> Filter: (a.location = 'Room 204')  (cost=13287 rows=5109) (actual time=0.907..36.2 rows=6758 loops=1)\n            -> Index lookup on a using idx_exp (access_date=DATE'2026-09-21')  (cost=13287 rows=51092) (actual time=0.895..33.8 rows=27074 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00118..0.00118 rows=1 loops=6758)",
+  "inside_ms": 33.6,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 27075,
+  "inside_plan": "-> Filter: ((a.location = 'Main Entrance') and (a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=12833 rows=568) (actual time=0.903..34.4 rows=16 loops=1)\n    -> Index lookup on a using idx_exp (access_date=DATE'2026-09-21')  (cost=12833 rows=51092) (actual time=0.883..31.1 rows=27074 loops=1)"
+ },
+ {
+  "index": "(location)",
+  "build_s": 32.0,
+  "size_mb": 201.8,
+  "ghost_ms": 8651.04,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 2513542,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=240959 rows=468461) (actual time=1.07..8774 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=240959 rows=468461) (actual time=1.07..8774 rows=1 loops=1)\n        -> Filter: (a.access_date = DATE'2026-09-21')  (cost=76998 rows=468461) (actual time=1.05..8765 rows=6758 loops=1)\n            -> Index lookup on a using idx_exp (location='Room 204')  (cost=76998 rows=4.68e+6) (actual time=1.04..8634 rows=2.51e+6 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00115..0.00115 rows=1 loops=6758)",
+  "inside_ms": 8533.06,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 2507089,
+  "inside_plan": "-> Filter: ((a.access_date = DATE'2026-09-21') and (a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=35356 rows=52041) (actual time=1.78..9113 rows=16 loops=1)\n    -> Index lookup on a using idx_exp (location='Main Entrance')  (cost=35356 rows=4.68e+6) (actual time=1.72..8953 rows=2.51e+6 loops=1)"
+ },
+ {
+  "index": "(location, access_date)",
+  "build_s": 41.4,
+  "size_mb": 234.8,
+  "ghost_ms": 21.78,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 13517,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=4731 rows=6758) (actual time=0.983..19.5 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=4731 rows=6758) (actual time=0.982..19.5 rows=1 loops=1)\n        -> Index lookup on a using idx_exp (location='Room 204', access_date=DATE'2026-09-21')  (cost=2366 rows=6758) (actual time=0.959..10.4 rows=6758 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00127..0.00127 rows=1 loops=6758)",
+  "inside_ms": 11.45,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 6806,
+  "inside_plan": "-> Filter: ((a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=3234 rows=1376) (actual time=1.15..10.9 rows=16 loops=1)\n    -> Index lookup on a using idx_exp (location='Main Entrance', access_date=DATE'2026-09-21')  (cost=3234 rows=12382) (actual time=1.14..10.4 rows=6805 loops=1)"
+ },
+ {
+  "index": "(location, access_date, entry_time)",
+  "build_s": 42.7,
+  "size_mb": 267.9,
+  "ghost_ms": 19.85,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 13517,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=8514 rows=12162) (actual time=19.8..19.8 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=8514 rows=12162) (actual time=19.8..19.8 rows=1 loops=1)\n        -> Index lookup on a using idx_exp (location='Room 204', access_date=DATE'2026-09-21')  (cost=4257 rows=12162) (actual time=1.24..11.5 rows=6758 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00114..0.00114 rows=1 loops=6758)",
+  "inside_ms": 14.52,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 6805,
+  "inside_plan": "-> Filter: (a.exit_time >= TIME'19:48:00')  (cost=5647 rows=4182) (actual time=13.5..13.5 rows=16 loops=1)\n    -> Index range scan on a using idx_exp over (location = 'Main Entrance' AND access_date = '2026-09-21' AND entry_time <= '19:37:00'), with index condition: ((a.access_date = DATE'2026-09-21') and (a.location = 'Main Entrance') and (a.entry_time <= TIME'19:37:00'))  (cost=5647 rows=12546) (actual time=1.41..13.2 rows=6804 loops=1)"
+ },
+ {
+  "index": "(entry_time, location, access_date)",
+  "build_s": 35.0,
+  "size_mb": 267.9,
+  "ghost_ms": 4023.03,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 10034247,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=1.05e+6 rows=100847) (actual time=0.325..4462 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=1.05e+6 rows=100847) (actual time=0.324..4462 rows=1 loops=1)\n        -> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Room 204'))  (cost=1.02e+6 rows=100847) (actual time=0.29..4453 rows=6758 loops=1)\n            -> Table scan on a  (cost=1.02e+6 rows=10.1e+6) (actual time=0.195..3859 rows=10e+6 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00125..0.00125 rows=1 loops=6758)",
+  "inside_ms": 3689.95,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 10027489,
+  "inside_plan": "-> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Main Entrance') and (a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=1.02e+6 rows=16806) (actual time=0.307..4038 rows=16 loops=1)\n    -> Table scan on a  (cost=1.02e+6 rows=10.1e+6) (actual time=0.228..3446 rows=10e+6 loops=1)"
+ },
+ {
+  "index": "(location, access_date, entry_time, exit_time, badge_id)",
+  "build_s": 50.0,
+  "size_mb": 424.0,
+  "ghost_ms": 10.68,
+  "ghost_rows_returned": 1,
+  "ghost_rows_read": 13517,
+  "ghost_plan": "-> Filter: (b.badge_id is null)  (cost=5974 rows=12674) (actual time=10.4..10.4 rows=1 loops=1)\n    -> Nested loop antijoin  (cost=5974 rows=12674) (actual time=10.4..10.4 rows=1 loops=1)\n        -> Covering index lookup on a using idx_exp (location='Room 204', access_date=DATE'2026-09-21')  (cost=1538 rows=12674) (actual time=0.302..3.39 rows=6758 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=965e-6..965e-6 rows=1 loops=6758)",
+  "inside_ms": 5.07,
+  "inside_rows_returned": 16,
+  "inside_rows_read": 6805,
+  "inside_plan": "-> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Main Entrance') and (a.entry_time <= TIME'19:37:00') and (a.exit_time >= TIME'19:48:00'))  (cost=2873 rows=4326) (actual time=5.15..5.15 rows=16 loops=1)\n    -> Covering index range scan on a using idx_exp over (location = 'Main Entrance' AND access_date = '2026-09-21' AND entry_time <= '19:37:00')  (cost=2873 rows=12980) (actual time=0.28..3.45 rows=6804 loops=1)"
+ }
+]

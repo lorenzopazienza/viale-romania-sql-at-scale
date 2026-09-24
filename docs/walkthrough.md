@@ -229,7 +229,7 @@ WHERE g.grade = (SELECT MIN(g2.grade)
 
 **Result:** 204 Beatrice Solari (last in ML, Econometrics, Marketing Analytics) and 211 Pablo Ortega (last in Databases).
 
-**At scale:** re-evaluating `MIN()` for every row is quadratic. See the README for the benchmark against `RANK() OVER (PARTITION BY course_id)`.
+**At scale:** re-evaluating `MIN()` for every row is quadratic. See [Correlated subquery vs window function](03-correlated-subqueries.md) for the benchmark against `RANK() OVER (PARTITION BY course_id)`.
 
 ---
 

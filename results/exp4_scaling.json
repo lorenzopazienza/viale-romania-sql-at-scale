@@ -1,0 +1,66 @@
+[
+ {
+  "db": "big_10k",
+  "rows": 10513,
+  "ghost_noidx_ms": 7.27,
+  "except_noidx_ms": 8.3,
+  "case_noidx_ms": 26.02,
+  "case_fixed_noidx_ms": 16.36,
+  "index_build_s": 0.1,
+  "ghost_idx_ms": 0.56,
+  "except_idx_ms": 0.69,
+  "case_idx_ms": 3.3,
+  "case_fixed_idx_ms": 1.43,
+  "case_answer": [
+   "('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620))"
+  ]
+ },
+ {
+  "db": "big_100k",
+  "rows": 100756,
+  "ghost_noidx_ms": 52.1,
+  "except_noidx_ms": 75.89,
+  "case_noidx_ms": 228.31,
+  "case_fixed_noidx_ms": 75.18,
+  "index_build_s": 0.4,
+  "ghost_idx_ms": 0.66,
+  "except_idx_ms": 1.02,
+  "case_idx_ms": 15.26,
+  "case_fixed_idx_ms": 2.17,
+  "case_answer": [
+   "('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620))"
+  ]
+ },
+ {
+  "db": "big_1m",
+  "rows": 1003186,
+  "ghost_noidx_ms": 427.31,
+  "except_noidx_ms": 721.01,
+  "case_noidx_ms": 2204.66,
+  "case_fixed_noidx_ms": 727.2,
+  "index_build_s": 3.8,
+  "ghost_idx_ms": 2.1,
+  "except_idx_ms": 4.04,
+  "case_idx_ms": 1789.95,
+  "case_fixed_idx_ms": 7.34,
+  "case_answer": [
+   "('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620))"
+  ]
+ },
+ {
+  "db": "big_10m",
+  "rows": 10027486,
+  "ghost_noidx_ms": 4014.39,
+  "except_noidx_ms": 7597.53,
+  "case_noidx_ms": 22158.43,
+  "case_fixed_noidx_ms": 7450.01,
+  "index_build_s": 41.7,
+  "ghost_idx_ms": 19.66,
+  "except_idx_ms": 39.78,
+  "case_idx_ms": 92455.13,
+  "case_fixed_idx_ms": 59.48,
+  "case_answer": [
+   "('Tommaso', 'Arcuri', 'Love jealousy: Ginevra left him for Maximilian', datetime.timedelta(seconds=70620))"
+  ]
+ }
+]

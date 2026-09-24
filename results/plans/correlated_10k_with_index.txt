@@ -1,0 +1,10 @@
+-> Table scan on <temporary>  (cost=5668..5799 rows=10294) (actual time=6790..6790 rows=775 loops=1)
+    -> Temporary table with deduplication  (cost=5668..5668 rows=10294) (actual time=6790..6790 rows=775 loops=1)
+        -> Nested loop inner join  (cost=4639 rows=10294) (actual time=1.61..6787 rows=775 loops=1)
+            -> Filter: (gbench.g.grade = (select #2))  (cost=1036 rows=10294) (actual time=1.6..6782 rows=775 loops=1)
+                -> Table scan on g  (cost=1036 rows=10294) (actual time=0.195..4.88 rows=10000 loops=1)
+                -> Select #2 (subquery in condition; dependent)
+                    -> Aggregate: min(gbench.g2.grade)  (cost=519 rows=1) (actual time=0.676..0.676 rows=1 loops=10000)
+                        -> Covering index lookup on g2 using idx_course_grade (course_id=gbench.g.course_id)  (cost=262 rows=2574) (actual time=0.0407..0.539 rows=2500 loops=10000)
+            -> Single-row covering index lookup on s using PRIMARY (student_id=gbench.g.student_id)  (cost=0.25 rows=1) (actual time=0.00572..0.00577 rows=1 loops=775)
+

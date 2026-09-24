@@ -1,0 +1,26 @@
+[
+ {
+  "db": "big_10k",
+  "rows": 10513,
+  "table_mb": 1.52,
+  "index_mb": 0.27
+ },
+ {
+  "db": "big_100k",
+  "rows": 100756,
+  "table_mb": 5.52,
+  "index_mb": 3.52
+ },
+ {
+  "db": "big_1m",
+  "rows": 1003186,
+  "table_mb": 53.58,
+  "index_mb": 27.56
+ },
+ {
+  "db": "big_10m",
+  "rows": 10027486,
+  "table_mb": 628.0,
+  "index_mb": 267.94
+ }
+]

@@ -1,0 +1,38 @@
+{
+ "variants": [
+  {
+   "variant": "LEFT JOIN ... IS NULL",
+   "ms": 12843.5,
+   "rows": 986,
+   "plan": "-> Filter: (b.badge_id is null)  (cost=4.15e+6 rows=9.2e+6) (actual time=0.628..14038 rows=986 loops=1)\n    -> Nested loop antijoin  (cost=4.15e+6 rows=9.2e+6) (actual time=0.627..14036 rows=986 loops=1)\n        -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.465..2686 rows=10e+6 loops=1)\n        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00105..0.00105 rows=1 loops=10e+6)"
+  },
+  {
+   "variant": "NOT EXISTS",
+   "ms": 9591.6,
+   "rows": 986,
+   "plan": "-> Nested loop antijoin  (cost=46.3e+9 rows=463e+9) (actual time=37.1..12135 rows=986 loops=1)\n    -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.411..2632 rows=10e+6 loops=1)\n    -> Single-row index lookup on <subquery2> using <auto_distinct_key> (badge_id=a.badge_id)  (cost=10136..10136 rows=1) (actual time=867e-6..867e-6 rows=1 loops=10e+6)\n        -> Materialize with deduplication  (cost=10117..10117 rows=50386) (actual time=36.6..36.6 rows=50136 loops=1)"
+  },
+  {
+   "variant": "NOT IN",
+   "ms": 9557.9,
+   "rows": 986,
+   "plan": "-> Nested loop antijoin  (cost=46.3e+9 rows=463e+9) (actual time=36.6..12673 rows=986 loops=1)\n    -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.429..2725 rows=10e+6 loops=1)\n    -> Single-row index lookup on <subquery2> using <auto_distinct_key> (badge_id=a.badge_id)  (cost=10136..10136 rows=1) (actual time=910e-6..910e-6 rows=1 loops=10e+6)\n        -> Materialize with deduplication  (cost=10117..10117 rows=50386) (actual time=36.1..36.1 rows=50136 loops=1)"
+  },
+  {
+   "variant": "EXCEPT (distinct badge_ids)",
+   "ms": 53794.2,
+   "rows": 927,
+   "plan": "-> Table scan on <except temporary>  (cost=1.85e+6..1.97e+6 rows=9.2e+6) (actual time=56032..56042 rows=927 loops=1)\n    -> Except materialize with deduplication  (cost=1.85e+6..1.85e+6 rows=9.2e+6) (actual time=56032..56032 rows=51060 loops=1)\n        -> Table scan on access_log  (cost=929787 rows=9.2e+6) (actual time=0.371..2936 rows=10e+6 loops=1)\n        -> Covering index scan on badges using student_id  (cost=5079 rows=50386) (actual time=0.37..12.9 rows=50136 loops=1)"
+  }
+ ],
+ "null_trap": [
+  {
+   "query": "NOT IN, list contains a NULL",
+   "count": 0
+  },
+  {
+   "query": "NOT EXISTS, same list",
+   "count": 986
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+[
+ {
+  "grades": 1000,
+  "correlated_ms": 227.2,
+  "window_ms": 2.6,
+  "correlated_idx_ms": 61.4,
+  "students_returned": 69
+ },
+ {
+  "grades": 10000,
+  "correlated_ms": 23102.1,
+  "window_ms": 24.3,
+  "correlated_idx_ms": 5695.0,
+  "students_returned": 775
+ },
+ {
+  "grades": 50000,
+  "correlated_ms": null,
+  "window_ms": 147.3,
+  "correlated_idx_ms": null,
+  "students_returned": 3864
+ },
+ {
+  "grades": 200000,
+  "correlated_ms": null,
+  "window_ms": 917.8,
+  "correlated_idx_ms": null,
+  "students_returned": 13602
+ }
+]

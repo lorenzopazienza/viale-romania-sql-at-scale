@@ -1,0 +1,5 @@
+-> Filter: (b.badge_id is null)  (cost=8514 rows=12162) (actual time=22.9..22.9 rows=1 loops=1)
+    -> Nested loop antijoin  (cost=8514 rows=12162) (actual time=22.9..22.9 rows=1 loops=1)
+        -> Index lookup on a using idx_loc_date_time (location='Room 204', access_date=DATE'2026-09-21')  (cost=4257 rows=12162) (actual time=1.81..12.7 rows=6758 loops=1)
+        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00141..0.00141 rows=1 loops=6758)
+

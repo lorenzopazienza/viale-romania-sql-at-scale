@@ -1,0 +1,6 @@
+-> Filter: (b.badge_id is null)  (cost=961978 rows=91974) (actual time=0.428..4686 rows=1 loops=1)
+    -> Nested loop antijoin  (cost=961978 rows=91974) (actual time=0.426..4686 rows=1 loops=1)
+        -> Filter: ((a.access_date = DATE'2026-09-21') and (a.location = 'Room 204'))  (cost=929787 rows=91974) (actual time=0.387..4678 rows=6758 loops=1)
+            -> Table scan on a  (cost=929787 rows=9.2e+6) (actual time=0.279..4060 rows=10e+6 loops=1)
+        -> Single-row covering index lookup on b using PRIMARY (badge_id=a.badge_id)  (cost=0.25 rows=1) (actual time=0.00115..0.00115 rows=1 loops=6758)
+
